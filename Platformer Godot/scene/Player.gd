@@ -33,3 +33,8 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, 0, 0.1)
 	move_and_slide(velocity)
 	
+
+
+func _on_Area2D_area_entered(area):
+	get_tree().change_scene("res://scene/Level1.tscn")
+	pass # Replace with function body.
