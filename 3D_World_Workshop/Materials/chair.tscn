@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Materials/table.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="chair" type="Spatial"]
+
+[node name="Table" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000263929, -0.00660229, 0.0022645 )
+
+[node name="back" type="MeshInstance" parent="Table"]
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.901783, 1.91747, 0.0124989 )
+mesh = SubResource( 1 )
+material/0 = null
