@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
 
 [node name="bed" type="Spatial"]
 
@@ -14,7 +16,7 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Leg1" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.911921, -0.339147, -1.79419 )
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.877348, -0.339147, -1.79419 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -24,16 +26,21 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Leg3" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.821921, -0.331508, 1.79156 )
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.86967, -0.331508, 1.79156 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Leg4" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.910579, -0.335777, 1.75166 )
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.872918, -0.335777, 1.75166 )
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="pillow" type="MeshInstance" parent="."]
-transform = Transform( 0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.4, 0, 0.348738, -1.35471 )
+transform = Transform( 0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.4, 0, 0.307539, -1.35471 )
 mesh = SubResource( 3 )
+material/0 = null
+
+[node name="sheet" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.03, 0, 0, 0, 1.5, 0, 0.230824, 0.504194 )
+mesh = SubResource( 4 )
 material/0 = null
