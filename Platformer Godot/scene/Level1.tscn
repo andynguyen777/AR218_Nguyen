@@ -69,9 +69,6 @@ smoothing_enabled = true
 [node name="Switch Platform" parent="Switch Plaforms" instance=ExtResource( 3 )]
 position = Vector2( 442.855, 608.132 )
 
-[node name="Collectable" parent="." instance=ExtResource( 4 )]
-position = Vector2( 798.977, 299.04 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -90,4 +87,10 @@ position = Vector2( 1.70711, -3.01569 )
 scale = Vector2( 1.99304, 2 )
 texture = ExtResource( 6 )
 
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Collectable" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( 798.977, 299.04 )
+
 [connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="coin_collected" from="Collectables/Collectable" to="HUD/ScoreLabel" method="_on_Collectable_coin_collected"]

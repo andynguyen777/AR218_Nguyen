@@ -30,10 +30,10 @@ func _process(delta):
 		
 		$ground_check.enabled = false 
 		
-		if not $ground_check .is_colliding and is_on_floor(): 
+		if not $ground_check.is_colliding and is_on_floor(): 
 		
 			flip_enemy()
-	
+func flip_enemy():
 	direction = direction * -1 
 	$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h 
 	$ground_check.position.x + $groundchecker.position.x *-1 
