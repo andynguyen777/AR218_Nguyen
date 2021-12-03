@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://player sprites/walk2.png" type="Texture" id=1]
+[ext_resource path="res://player sprites/Walk1.png" type="Texture" id=2]
+[ext_resource path="res://player sprites/Idle.png" type="Texture" id=3]
+[ext_resource path="res://player sprites/Walk3.png" type="Texture" id=4]
+[ext_resource path="res://player sprites/Walk4.png" type="Texture" id=5]
+[ext_resource path="res://player sprites/Air.png" type="Texture" id=6]
+[ext_resource path="res://scene/Enemy.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 24.6447
+height = 215.451
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 35.6232, 126.716 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -9.04422, 1.18502 )
+shape = SubResource( 2 )
+
+[node name="ground_check" type="RayCast2D" parent="."]
+position = Vector2( 28, 68 )
+enabled = true
+
+[node name="player_checker" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_checker"]
+position = Vector2( 1.82877, 1.33484 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 2.66968, 1.33484 )
+shape = SubResource( 4 )
+
+[node name="Fade_Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Fade_Timer" to="." method="_on_Fade_Timer_timeout"]

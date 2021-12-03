@@ -3,7 +3,8 @@ extends KinematicBody2D
 var velocity := Vector2(0,0)
 export var speed := 180
 export var jump := -900
-const GRAVITY := 35
+export var engergy := 10
+const GRAVITY := 35 
 
 func _physics_process(delta):
 	if Input.is_action_pressed("right"):
@@ -27,7 +28,7 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-	velocity.x = lerp(velocity.x, 0,0.1)
+	velocity.x = lerp(velocity.x, 0,0.1) 
 
 
 func _on_Area2D_area_entered(area):
