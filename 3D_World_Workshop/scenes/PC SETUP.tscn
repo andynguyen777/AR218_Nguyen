@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -14,7 +14,15 @@
 
 [sub_resource type="CubeMesh" id=7]
 
-[sub_resource type="CubeMesh" id=8]
+[sub_resource type="CubeMesh" id=12]
+
+[sub_resource type="CapsuleMesh" id=8]
+
+[sub_resource type="CubeMesh" id=9]
+
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="CubeMesh" id=11]
 
 [node name="PC SETUP" type="Spatial"]
 
@@ -73,12 +81,47 @@ transform = Transform( 0.5, 0, 0, 0, 0.03, 0, 0, 0, 0.3, -0.355726, 1.14902, 0.3
 mesh = SubResource( 7 )
 material/0 = null
 
+[node name="wire" type="MeshInstance" parent="Keyboard"]
+transform = Transform( 0.044, 0, 0, 0, 0.4, 0, 0, 0, 1.08667, -0.064936, 0.0784378, -1.25603 )
+mesh = SubResource( 12 )
+material/0 = null
+
 [node name="MousePad" type="MeshInstance" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.02, 0, 0, 0, 0.5, 0.734955, 1.12005, 0.174694 )
 mesh = SubResource( 7 )
 material/0 = null
 
-[node name="Chair" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.531443, 0, 2.80934 )
+[node name="MeshInstance" type="MeshInstance" parent="MousePad"]
+transform = Transform( 0.1, 0, 0, 0, 2.5, 0, 0, 0, 0.1, 0.0562036, 1.39118, 0.179552 )
 mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Chair" type="MeshInstance" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.05, 0, 0, 0, 0.6, -0.531443, 0.214658, 0.663599 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="chairleg4" type="MeshInstance" parent="Chair"]
+transform = Transform( 0.166667, 0, 0, 0, 12, 0, 0, 0, 0.166667, 0.819908, -12.5387, -0.820986 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="chairleg3" type="MeshInstance" parent="Chair"]
+transform = Transform( 0.166667, 0, 0, 0, 12, 0, 0, 0, 0.166667, -0.831555, -12.5387, -0.820986 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="chairleg1" type="MeshInstance" parent="Chair"]
+transform = Transform( 0.166667, 0, 0, 0, 12, 0, 0, 0, 0.166667, 0.819154, -12.5387, 0.828115 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="chairleg2" type="MeshInstance" parent="Chair"]
+transform = Transform( 0.166667, 0, 0, 0, 12, 0, 0, 0, 0.166667, -0.831555, -12.5387, 0.828115 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="Chair"]
+transform = Transform( 1, 0, 0, 0, 0.00945951, 11.9995, 0, -0.0833296, 0.00945951, 0, 13.0053, 0.925528 )
+mesh = SubResource( 11 )
 material/0 = null

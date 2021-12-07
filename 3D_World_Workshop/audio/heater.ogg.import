@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heater.ogg-2f9c644242092fe7fc92ec4be4e3515c.oggstr"
+
+[deps]
+
+source_file="res://audio/heater.ogg"
+dest_files=[ "res://.import/heater.ogg-2f9c644242092fe7fc92ec4be4e3515c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

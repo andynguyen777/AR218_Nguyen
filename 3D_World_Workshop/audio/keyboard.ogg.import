@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/keyboard.ogg-ba9e04fa01d217f9b7134b0a75645b7c.oggstr"
+
+[deps]
+
+source_file="res://audio/keyboard.ogg"
+dest_files=[ "res://.import/keyboard.ogg-ba9e04fa01d217f9b7134b0a75645b7c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
