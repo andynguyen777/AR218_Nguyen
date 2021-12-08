@@ -1,12 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [node name="bed" type="Spatial"]
 
@@ -18,29 +33,29 @@ material/0 = null
 [node name="Leg1" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.877348, -0.339147, -1.79419 )
 mesh = SubResource( 2 )
-material/0 = null
-
-[node name="Leg2" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.871851, -0.339147, -1.79419 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="Leg3" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.86967, -0.331508, 1.79156 )
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="Leg4" type="MeshInstance" parent="."]
-transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.872918, -0.335777, 1.75166 )
-mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 3 )
 
 [node name="pillow" type="MeshInstance" parent="."]
 transform = Transform( 0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.4, 0, 0.307539, -1.35471 )
-mesh = SubResource( 3 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="sheet" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.03, 0, 0, 0, 1.5, 0, 0.230824, 0.504194 )
-mesh = SubResource( 4 )
-material/0 = null
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Leg2" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.868431, -0.339147, -1.80477 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="Leg3" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, 0.86625, -0.331508, 1.78098 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 5 )
+
+[node name="Leg4" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.2, 0, 0, 0, 0.1, -0.876338, -0.335777, 1.74108 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 6 )

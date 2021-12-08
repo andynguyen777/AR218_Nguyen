@@ -13,6 +13,10 @@ config_version=4
 config/name="3D_World_Workshop"
 config/icon="res://icon.png"
 
+[gdnative]
+
+singletons=[ "res://addons/godot-oculus/godot_oculus.gdnlib" ]
+
 [input]
 
 move_forward={

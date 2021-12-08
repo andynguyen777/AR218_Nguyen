@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://FirstPersonPlayer/Player.tscn" type="PackedScene" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://scenes/andy.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/PC SETUP.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/stand.tscn" type="PackedScene" id=18]
+[ext_resource path="res://audio/keyboard.ogg" type="AudioStream" id=19]
+[ext_resource path="res://audio/heater.ogg" type="AudioStream" id=20]
+[ext_resource path="res://audio/knock.ogg" type="AudioStream" id=21]
+[ext_resource path="res://scenes/Spatial.tscn" type="PackedScene" id=22]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -30,7 +34,7 @@ albedo_texture = ExtResource( 6 )
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "fan spin"
 length = 5.0
 loop = true
@@ -59,7 +63,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "spin globe"
 loop = true
 tracks/0/type = "value"
@@ -75,7 +79,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("HEART:rotation_degrees")
@@ -166,21 +170,21 @@ transform = Transform( -5.22584e-05, 0, 1, 0, 1, 0, -1, 0, -5.22584e-05, -7.6708
 transform = Transform( 0.999875, 0, -0.0158469, 0, 1, 0, 0.0158469, 0, 0.999875, -7.67825, 1.50214, 6.57703 )
 
 [node name="HEART" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94149, 5.89846, -6.94334 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05419, 5.89846, -3.33831 )
 
 [node name="ceiling fan1" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.309017, 0, 0.951056, 0, 1, 0, -0.951056, 0, 0.309017, -9.91545, 6.26299, -3.37907 )
+transform = Transform( 0.309017, 0, 0.951056, 0, 1, 0, -0.951056, 0, 0.309017, -12.1729, 6.18423, -2.67673 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ceiling fan1"]
 autoplay = "fan spin"
-"anims/fan spin" = SubResource( 7 )
+"anims/fan spin" = SubResource( 5 )
 
 [node name="Globe" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -12.6142, 1.44422, -11.8225 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Globe"]
 autoplay = "spin globe"
-"anims/spin globe" = SubResource( 8 )
+"anims/spin globe" = SubResource( 6 )
 
 [node name="Door" parent="." instance=ExtResource( 14 )]
 transform = Transform( 0.0127056, 0, 0.99992, 0, 1, 0, -0.99992, 0, 0.0127056, -18.3399, 0, 4.71014 )
@@ -199,4 +203,25 @@ transform = Transform( 1, 0, 1.7602e-07, 0, 1, 0, -1.7602e-07, 0, 1, -12.61, 1.4
 
 [node name="heart anim" type="AnimationPlayer" parent="."]
 autoplay = "Heart Anim"
-"anims/Heart Anim" = SubResource( 6 )
+"anims/Heart Anim" = SubResource( 7 )
+
+[node name="keyboard sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8822, 2.24521, -1.4025 )
+stream = ExtResource( 19 )
+unit_db = 6.0
+unit_size = 4.0
+autoplay = true
+
+[node name="heater" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.565, 0.664445, -3.05662 )
+stream = ExtResource( 20 )
+unit_db = 2.0
+autoplay = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5412, 2.78861, 4.53499 )
+stream = ExtResource( 21 )
+unit_db = 1.0
+autoplay = true
+
+[node name="Spatial" parent="." instance=ExtResource( 22 )]
